@@ -1,42 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lucas Laszacs</title>
   <meta charset="utf-8">
+  <title>Lucas Laszacs | Systems-Focused Technical Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Systems-focused technical builder working across data engineering, automation, biotech infrastructure, and analytics.">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+  <canvas id="bg-canvas"></canvas>
 
-<h1>Lucas Laszacs</h1>
-<p class="tagline">
-Biotech • Data • Systems • Open Science
-</p>
+  <nav>
+    <div class="nav-container">
+      <a class="logo" href="index.html">Lucas Laszacs</a>
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="pages/lab.html">Lab</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/resume.html">Resume</a>
+        <a href="pages/contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<section>
-<h2>About</h2>
-<p>
-I build tools, systems, and research infrastructure across biotech,
-data science, and decentralized prediction markets.
-</p>
-</section>
+  <header class="hero">
+    <div class="hero-shell">
+      <div class="hero-core reveal">
+        <div class="hero-tabs" role="tablist" aria-label="Profile focus">
+          <button class="hero-tab active" type="button" role="tab" aria-selected="true" data-hero-tab="technical">Technical</button>
+          <button class="hero-tab" type="button" role="tab" aria-selected="false" data-hero-tab="biological">Biological</button>
+        </div>
 
-<section>
-<h2>Projects</h2>
-<ul>
-<li><b>dns-by-ssid</b> — automatic DNS switching by network</li>
-<li><b>Prediction market analytics</b> — Kalshi data + modeling</li>
-<li><b>Open-source lab infrastructure</b></li>
-<li><b>Lanky Jitsu</b> — brand + training</li>
-</ul>
-</section>
+        <div class="hero-panel active" data-hero-panel="technical">
+          <div class="eyebrow">Technical Builder</div>
+          <h1>Software Systems for Real-World Operations</h1>
+          <div class="hero-meta">Raleigh, NC | Remote-friendly | Contract and consulting engagements</div>
+          <p class="tagline">Data engineering, automation, and infrastructure-minded technical delivery.</p>
+          <p class="intro">
+            I build systems that work under real constraints: cloud ingest pipelines, automation tooling,
+            and reliable operational workflows that teams can use immediately.
+          </p>
+          <p class="signal">High-agency implementation over presentation-only output.</p>
+          <div class="hero-buttons">
+            <a class="btn" href="projects.html">View Technical Projects</a>
+            <a class="btn-outline" href="pages/contact.html">Start a Conversation</a>
+          </div>
+        </div>
 
-<section>
-<h2>Contact</h2>
-<ul>
-<li>GitHub: <a href="https://github.com/YOURUSERNAME">github.com/YOURUSERNAME</a></li>
-<li>Email: you@email.com</li>
-</ul>
-</section>
+        <div class="hero-panel" data-hero-panel="biological">
+          <div class="eyebrow">Biological Research</div>
+          <h1>Biological Execution with Systems Discipline</h1>
+          <div class="hero-meta">Virology and molecular biology | Research consultant at Clarus Biologics</div>
+          <p class="tagline">Hands-on assay execution, workflow optimization, and reproducibility-focused lab operations.</p>
+          <p class="intro">
+            I run experiments from design through interpretation across VLP workflows, molecular assays, and
+            BSL-2 research pipelines, while applying technical systems thinking to documentation and process quality.
+          </p>
+          <p class="signal">Built for biotech teams that need execution speed without sacrificing rigor.</p>
+          <div class="hero-buttons">
+            <a class="btn" href="pages/lab.html">View Biological Work</a>
+            <a class="btn-outline" href="pages/resume.html">Open Resume</a>
+          </div>
+        </div>
+      </div>
 
+      <aside class="proof-panel reveal delay-1">
+        <div class="proof-panel-view active" data-proof-panel="technical">
+          <h2>Technical Proof</h2>
+          <div class="proof-grid">
+            <div class="proof-item">
+              <strong>6+</strong>
+              <span>Public repositories across data, automation, and product work</span>
+            </div>
+            <div class="proof-item">
+              <strong>AWS</strong>
+              <span>Distributed ingest architecture for market data collection</span>
+            </div>
+            <div class="proof-item">
+              <strong>Python</strong>
+              <span>Pipeline scripting, automation, and workflow support</span>
+            </div>
+            <div class="proof-item">
+              <strong>Ops</strong>
+              <span>CLI-first tooling for reliable repeated execution</span>
+            </div>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Automation</span>
+            <span class="chip">Infrastructure</span>
+          </div>
+        </div>
+
+        <div class="proof-panel-view" data-proof-panel="biological">
+          <h2>Biological Proof</h2>
+          <div class="proof-grid">
+            <div class="proof-item">
+              <strong>5+</strong>
+              <span>Years in virology and immunology research environments</span>
+            </div>
+            <div class="proof-item">
+              <strong>Current</strong>
+              <span>Clarus Biologics contract role focused on VLP optimization</span>
+            </div>
+            <div class="proof-item">
+              <strong>UNC SOM</strong>
+              <span>de Silva Lab experience in dengue correlates and assay improvement</span>
+            </div>
+            <div class="proof-item">
+              <strong>ASTMH</strong>
+              <span>2023 annual meeting poster presentation</span>
+            </div>
+          </div>
+          <div class="chip-row">
+            <span class="chip">VLP</span>
+            <span class="chip">BSL-2</span>
+            <span class="chip">ELISA</span>
+            <span class="chip">Flow Cytometry</span>
+            <span class="chip">SOP Discipline</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="section reveal delay-1">
+    <div class="section-heading">
+      <h2>Current Focus</h2>
+      <p>Active workstreams across software systems and biological research execution.</p>
+    </div>
+    <div class="stat-strip">
+      <div class="metric"><strong>Research Operations</strong>Assay execution, workflow optimization, and documentation quality in biotech lab environments.</div>
+      <div class="metric"><strong>Data Systems</strong>Python and SQL workflows for ingest, QC checks, and analysis-ready pipelines.</div>
+      <div class="metric"><strong>Automation</strong>macOS and Linux operational tooling that removes repetitive manual overhead.</div>
+      <div class="metric"><strong>Infrastructure</strong>Cloud-backed collection and service workflows with practical reliability considerations.</div>
+    </div>
+  </section>
+
+  <section class="section reveal delay-2">
+    <div class="section-heading">
+      <h2>Featured Systems</h2>
+      <p>Case-study level projects with real implementation constraints and outcomes.</p>
+    </div>
+    <div class="grid grid-2">
+      <article class="project">
+        <div class="kicker">Data Infrastructure</div>
+        <h3>Kalshi AWS Ingest</h3>
+        <p>Parallel cloud ingest architecture for candlestick market data using EC2 orchestration.</p>
+      </article>
+      <article class="project">
+        <div class="kicker">Network Automation</div>
+        <h3>DNS-by-SSID Utility</h3>
+        <p>Config-driven local utility that applies network DNS policies automatically based on Wi-Fi context.</p>
+      </article>
+      <article class="project">
+        <div class="kicker">Biotech Execution</div>
+        <h3>VLP Process Optimization</h3>
+        <p>Mammalian-cell VLP workflow tuning with reagent, timing, and purification refinements for better yield behavior.</p>
+      </article>
+      <article class="project">
+        <div class="kicker">Web Product</div>
+        <h3>Bookkeeping Platform Build</h3>
+        <p>Flask + SQLite bookkeeping app implementation with practical workflow-first design.</p>
+        <p><a href="https://logicalbooks.io" target="_blank" rel="noopener noreferrer">Visit live site</a></p>
+      </article>
+    </div>
+    <div class="row-actions">
+      <a class="btn-outline" href="projects.html">Open Full Case Studies</a>
+    </div>
+  </section>
+
+  <section class="section reveal delay-3">
+    <div class="section-heading">
+      <h2>Live GitHub Signal</h2>
+      <p>Most recently active non-fork repositories.</p>
+    </div>
+    <div id="github-feed" class="card">Loading GitHub repositories...</div>
+  </section>
+
+  <section class="section reveal delay-4">
+    <div class="section-heading">
+      <h2>Best Engagement Fit</h2>
+    </div>
+    <div class="card">
+      <ul>
+        <li>Early-stage technical teams needing high-agency implementation with minimal handholding.</li>
+        <li>Organizations modernizing data pipelines and internal automation-heavy operations.</li>
+        <li>Biological research groups that need software and systems execution without full-time overhead.</li>
+        <li>Technical leads who prioritize shipped systems over presentation-only artifacts.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Lucas Laszacs</p>
+    <div class="footer-links">
+      <a href="https://github.com/DonQuanto" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/lmlaszacs" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:lucaslaszacs@gmail.com">lucaslaszacs@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="loader.js"></script>
+  <script src="bg.js"></script>
+  <script src="gh_feed.js"></script>
+  <script>
+    (() => {
+      const tabs = Array.from(document.querySelectorAll("[data-hero-tab]"));
+      const heroPanels = Array.from(document.querySelectorAll("[data-hero-panel]"));
+      const proofPanels = Array.from(document.querySelectorAll("[data-proof-panel]"));
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const key = tab.dataset.heroTab;
+
+          tabs.forEach((candidate) => {
+            const isActive = candidate === tab;
+            candidate.classList.toggle("active", isActive);
+            candidate.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+
+          heroPanels.forEach((panel) => {
+            panel.classList.toggle("active", panel.dataset.heroPanel === key);
+          });
+
+          proofPanels.forEach((panel) => {
+            panel.classList.toggle("active", panel.dataset.proofPanel === key);
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
