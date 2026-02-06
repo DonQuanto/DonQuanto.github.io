@@ -27,6 +27,11 @@ body {
 
 body {
   margin: 0;
+  --hand-a-pos: 20% 12%;
+  --hand-b-pos: 80% 12%;
+  --hand-c-pos: 50% 92%;
+  --glow-c-pos: 50% 90%;
+  --hand-size: min(46vw, 680px);
   font-family: var(--body);
   line-height: 1.62;
   color: var(--text);
@@ -41,12 +46,54 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 42px 42px;
-  pointer-events: none;
   z-index: -2;
-  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at var(--hand-a-pos), rgba(255, 126, 34, 0.19), rgba(255, 126, 34, 0) 44%),
+    radial-gradient(circle at var(--hand-b-pos), rgba(255, 86, 24, 0.18), rgba(255, 86, 24, 0) 44%),
+    radial-gradient(circle at var(--glow-c-pos), rgba(255, 168, 62, 0.17), rgba(255, 168, 62, 0) 46%);
+  background-repeat: no-repeat;
+  filter: blur(15px) saturate(1.08);
+  opacity: 0.72;
+  animation: fireGlowPulse 7.5s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    url("/assets/logo/logo_transparent.webp"),
+    url("/assets/logo/logo_transparent.webp"),
+    url("/assets/logo/logo_transparent.webp");
+  background-repeat: no-repeat;
+  background-position:
+    var(--hand-a-pos),
+    var(--hand-b-pos),
+    var(--hand-c-pos);
+  background-size:
+    var(--hand-size),
+    var(--hand-size),
+    var(--hand-size);
+  opacity: 0.29;
+  filter: saturate(1.12) contrast(1.24) brightness(0.88);
+}
+
+@keyframes fireGlowPulse {
+  0% {
+    opacity: 0.62;
+    transform: scale(0.992);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.008);
+  }
+  100% {
+    opacity: 0.68;
+    transform: scale(1);
+  }
 }
 
 #bg-canvas {
@@ -64,15 +111,26 @@ nav,
 .section,
 footer {
   position: relative;
-  z-index: 2;
 }
 
 nav {
+  z-index: 40;
   position: sticky;
   top: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(7, 7, 10, 0.68);
   backdrop-filter: blur(10px);
+}
+
+.hero,
+.page-hero {
+  z-index: 20;
+  isolation: isolate;
+}
+
+.section,
+footer {
+  z-index: 10;
 }
 
 .nav-container {
@@ -86,6 +144,9 @@ nav {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--display);
   font-size: 0.96rem;
   font-weight: 600;
@@ -103,6 +164,18 @@ nav {
 .logo:hover {
   border-color: rgba(214, 177, 119, 0.52);
   color: #f4dbae;
+}
+
+.logo-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: block;
+  object-fit: contain;
+}
+
+.logo-label {
+  transform: translateY(0.5px);
 }
 
 .nav-links {
@@ -529,6 +602,96 @@ a:hover {
   gap: 16px;
 }
 
+.portfolio-catalog {
+  display: grid;
+  gap: 12px;
+}
+
+.focus-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 7px;
+  border-radius: 13px;
+  border: 1px solid rgba(214, 177, 119, 0.22);
+  background: rgba(17, 17, 25, 0.7);
+}
+
+.focus-tab {
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.02);
+  color: #b7b7c4;
+  border-radius: 10px;
+  padding: 8px 13px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.focus-tab:hover {
+  border-color: rgba(214, 177, 119, 0.26);
+  color: #e5cb9f;
+}
+
+.focus-tab.active {
+  background: rgba(214, 177, 119, 0.14);
+  border-color: rgba(214, 177, 119, 0.46);
+  color: #f0d4a6;
+}
+
+.portfolio-focus-description {
+  margin: 4px 0 0;
+  color: #c3c3cf;
+}
+
+.portfolio-focus-count {
+  margin: -2px 0 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portfolio-card {
+  display: grid;
+  gap: 10px;
+}
+
+.portfolio-headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.portfolio-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.portfolio-link-sep {
+  color: #7f7f90;
+  font-size: 12px;
+}
+
+.portfolio-related {
+  margin-top: -2px;
+  color: #b8b8c6;
+  font-size: 13px;
+}
+
+.portfolio-empty {
+  padding: 18px;
+}
+
 .arch-strip {
   display: flex;
   flex-wrap: wrap;
@@ -569,6 +732,7 @@ a:hover {
   font-family: var(--mono);
 }
 
+.github-feed,
 #github-feed {
   display: grid;
   gap: 13px;
@@ -598,9 +762,55 @@ a:hover {
   font-size: 12px;
 }
 
+.repo-meta-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.repo-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.repo-badge.tool {
+  color: #f0d5ac;
+  border: 1px solid rgba(237, 177, 103, 0.42);
+  background: rgba(237, 177, 103, 0.14);
+}
+
+.repo-badge.project {
+  color: #bcd4f2;
+  border: 1px solid rgba(126, 159, 215, 0.42);
+  background: rgba(126, 159, 215, 0.14);
+}
+
 .repo-desc {
   font-size: 14px;
   color: #c4c4d0;
+}
+
+.repo-topic-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+
+.repo-topic {
+  border: 1px solid rgba(214, 177, 119, 0.3);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: #d8c6a4;
+  font-family: var(--mono);
+  background: rgba(214, 177, 119, 0.08);
 }
 
 .page-intro {
@@ -790,12 +1000,21 @@ footer p {
   .proof-grid,
   .stat-strip,
   .grid-3,
-  .capability-deck {
+  .capability-deck,
+  .portfolio-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 760px) {
+  body {
+    --hand-a-pos: 14% 16%;
+    --hand-b-pos: 86% 16%;
+    --hand-c-pos: 50% 90%;
+    --glow-c-pos: 50% 88%;
+    --hand-size: min(80vw, 460px);
+  }
+
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
@@ -814,8 +1033,19 @@ footer p {
   .stat-strip,
   .grid-2,
   .grid-3,
-  .capability-deck {
+  .capability-deck,
+  .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .focus-tabs {
+    width: 100%;
+  }
+
+  .focus-tab {
+    flex: 1 1 auto;
+    min-width: 130px;
+    text-align: center;
   }
 
   .hero-core,
@@ -825,5 +1055,14 @@ footer p {
   .case-card,
   .cap-card {
     padding: 18px;
+  }
+
+  body::after {
+    opacity: 0.31;
+  }
+
+  body::before {
+    filter: blur(13px) saturate(1.06);
+    opacity: 0.76;
   }
 }

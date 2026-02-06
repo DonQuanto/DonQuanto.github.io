@@ -1,0 +1,132 @@
+{
+  "focuses": [
+    {
+      "id": "biology",
+      "label": "Biology",
+      "description": "Research execution and workflow optimization across virology, assay operations, and lab systems discipline."
+    },
+    {
+      "id": "data-science",
+      "label": "Data Science",
+      "description": "Data ingestion and analysis pipelines for market intelligence, backfills, and model-ready datasets."
+    },
+    {
+      "id": "software-systems",
+      "label": "Software Systems",
+      "description": "Operational software delivery across product implementation, automation, and business tooling."
+    }
+  ],
+  "projects": [
+    {
+      "id": "kalshi-aws-ingest",
+      "title": "Kalshi AWS Ingest",
+      "focus": "data-science",
+      "kicker": "Data + Cloud",
+      "summary": "Distributed ingest architecture for historical candlestick market data using AWS EC2 workers.",
+      "problem": "Single-machine collection bottlenecked historical backfills and reduced strategy research velocity.",
+      "architecture": "Parallel worker orchestration on EC2 with segmented workloads and aggregation flow back to central storage.",
+      "outcome": "Materially reduced backfill runtime and enabled faster iteration for analysis and strategy development.",
+      "stack": ["Python", "AWS EC2", "Parallel Workers", "Time Series"],
+      "projectTopic": "project-kalshi-ingest",
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/DonQuanto/kalshi_aws"
+        }
+      ]
+    },
+    {
+      "id": "prediction-market-api",
+      "title": "Unified Prediction Market API",
+      "focus": "data-science",
+      "kicker": "Market Infrastructure",
+      "summary": "In-progress architecture to normalize exchange integrations into one modular API surface.",
+      "problem": "Exchange-specific endpoints and payload differences increase integration complexity and maintenance burden.",
+      "architecture": "Adapter-based abstraction with normalized entities, shared auth/rate-limit handling, and pluggable market connectors.",
+      "outcome": "Improves multi-market portability for strategy tooling and reduces duplicate integration code.",
+      "stack": ["Python", "REST", "Async IO", "Schema Normalization"],
+      "projectTopic": "project-prediction-api",
+      "links": []
+    },
+    {
+      "id": "vlp-optimization",
+      "title": "VLP Process Optimization",
+      "focus": "biology",
+      "kicker": "Biotech Execution",
+      "summary": "Workflow optimization for virus-like particle production in mammalian systems under real lab constraints.",
+      "problem": "Production consistency and yield behavior required tighter control over reagent, timing, and purification variables.",
+      "architecture": "Iterative process tuning with standardized run conditions, controlled comparisons, and documentation discipline.",
+      "outcome": "Improved reproducibility and clearer run-to-run operational baselines for ongoing platform work.",
+      "stack": ["VLP", "BSL-2", "Workflow SOPs", "Data Logging"],
+      "projectTopic": "project-vlp-optimization",
+      "links": [
+        {
+          "label": "Lab Overview",
+          "url": "/lab/"
+        }
+      ]
+    },
+    {
+      "id": "dengue-assay-workflows",
+      "title": "Dengue Assay Workflow Support",
+      "focus": "biology",
+      "kicker": "Immunology Research",
+      "summary": "Assay workflow support and research operations for dengue correlate investigation and experimental throughput.",
+      "problem": "High-volume assay cycles require process consistency, clean lineage tracking, and robust execution hygiene.",
+      "architecture": "Operational lab support with SOP-aligned execution, instrumentation readiness, and structured data capture.",
+      "outcome": "Supported stable execution cadence and analysis-ready outputs for ongoing research programs.",
+      "stack": ["ELISA", "Flow Cytometry", "Assay Ops", "Experimental QC"],
+      "projectTopic": "project-dengue-assays",
+      "links": [
+        {
+          "label": "Resume",
+          "url": "/resume/"
+        }
+      ]
+    },
+    {
+      "id": "logical-books-platform",
+      "title": "Logical Books Platform",
+      "focus": "software-systems",
+      "kicker": "Product Delivery",
+      "summary": "Two-part system: a public business website plus a locally hosted internal bookkeeping application.",
+      "problem": "Needed a straightforward bookkeeping workflow and external credibility site without heavyweight infrastructure.",
+      "architecture": "Separated architecture with (1) a public-facing business website for positioning and lead conversion, and (2) a locally hosted Flask web app backed by SQLite for internal bookkeeping operations.",
+      "outcome": "Delivered both external market presence and practical internal finance tooling in a cohesive project.",
+      "stack": ["Flask", "SQLite", "Locally Hosted App", "Public Website"],
+      "projectTopic": "project-logicalbooks",
+      "links": [
+        {
+          "label": "Public Website",
+          "url": "https://logicalbooks.io"
+        },
+        {
+          "label": "Website Repo",
+          "url": "https://github.com/DonQuanto/logicalbooks.io"
+        },
+        {
+          "label": "Internal App Repo",
+          "url": "https://github.com/DonQuanto/logical-books_flask"
+        }
+      ]
+    },
+    {
+      "id": "dns-by-ssid",
+      "title": "DNS by SSID Automation",
+      "focus": "software-systems",
+      "kicker": "Systems Utility",
+      "summary": "Config-driven utility that applies DNS policy automatically based on current Wi-Fi network.",
+      "problem": "Manual DNS switching across changing environments created repeated operational friction.",
+      "architecture": "SSID mapping rules with deterministic profile application and repeatable CLI execution.",
+      "outcome": "Reduced context-switch overhead and improved reliability for network-dependent workflows.",
+      "stack": ["Shell", "macOS", "Network Config", "Automation"],
+      "projectTopic": "project-dns-automation",
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/DonQuanto/dns_by_ssid_mac"
+        }
+      ]
+    }
+  ]
+}

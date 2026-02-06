@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Lab Systems | Lucas Laszacs</title>
+  <title>Tools | Lucas Laszacs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="/assets/logo/favicon.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/logo/logo_512x512.png">
@@ -24,8 +24,8 @@
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="/projects/">Projects</a>
-        <a href="/tools/">Tools</a>
-        <a class="active" href="/lab/">Lab</a>
+        <a class="active" href="/tools/">Tools</a>
+        <a href="/lab/">Lab</a>
         <a href="/about/">About</a>
         <a href="/resume/">Resume</a>
         <a href="/contact/">Contact</a>
@@ -33,42 +33,23 @@
     </div>
   </nav>
 
-  <header class="page-hero">
-    <h1>Biotech + Research Systems</h1>
-    <p class="page-intro">Technical support for research environments where scientific rigor and reliable software operations need to coexist.</p>
+  <header class="page-hero reveal">
+    <div class="eyebrow">Software Tools</div>
+    <h1>Operational Tools by Focus Area</h1>
+    <p class="page-intro">Published utilities and developer tools organized by domain.</p>
   </header>
 
-  <section class="section">
-    <h2>Consulting Scope</h2>
-    <div class="grid grid-2">
-      <article class="project">
-        <h3>VLP Workflow Optimization</h3>
-        <p>Improve virus-like particle production performance through reagent, timing, and purification process refinement.</p>
-      </article>
-      <article class="project">
-        <h3>Molecular and Virology Assay Execution</h3>
-        <p>Run and troubleshoot workflows including electrophoresis, RNA IVT, plasmid linearization, sequencing prep, and electroporation-based transfection.</p>
-      </article>
-      <article class="project">
-        <h3>Documentation and Transfer Readiness</h3>
-        <p>Build SOP-aligned records, assay notes, and protocol artifacts that support reproducibility and technical handoff.</p>
-      </article>
-      <article class="project">
-        <h3>Research Operations</h3>
-        <p>Support equipment readiness, inventory planning, and workflow organization to keep experimental throughput stable.</p>
-      </article>
+  <section class="section reveal delay-1">
+    <div class="section-heading">
+      <h2>Focus Areas</h2>
+      <p>Review tools across Biology, Data Science, and Software Systems.</p>
     </div>
-  </section>
 
-  <section class="section">
-    <h2>Operating Principles</h2>
-    <div class="card">
-      <ul>
-        <li>Preserve data lineage from collection through interpretation.</li>
-        <li>Prefer reproducible workflows over ad hoc heroic effort.</li>
-        <li>Design for real users under real constraints.</li>
-        <li>Document systems so research momentum does not depend on one person.</li>
-      </ul>
+    <div class="portfolio-catalog" data-tools-catalog>
+      <div class="focus-tabs" data-focus-tabs role="tablist" aria-label="Tool focus tabs"></div>
+      <p class="portfolio-focus-description" data-focus-description></p>
+      <p class="portfolio-focus-count muted" data-focus-count></p>
+      <div class="portfolio-grid" data-focus-grid>Loading tools...</div>
     </div>
   </section>
 
@@ -83,5 +64,6 @@
 
   <script src="/loader.js"></script>
   <script src="/bg.js"></script>
+  <script src="/portfolio_catalog.js"></script>
 </body>
 </html>

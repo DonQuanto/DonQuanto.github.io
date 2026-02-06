@@ -4,6 +4,12 @@
   <meta charset="utf-8">
   <title>Lucas Laszacs | Systems-Focused Technical Builder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/logo/favicon.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/logo/logo_512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/apple_touch_icon.png">
+  <meta name="theme-color" content="#070709">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta property="og:image" content="/assets/logo/social_card_1200x630.png">
   <meta name="description" content="Systems-focused technical builder working across data engineering, automation, biotech infrastructure, and analytics.">
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,10 +19,14 @@
 
   <nav>
     <div class="nav-container">
-      <a class="logo" href="/">Lucas Laszacs</a>
+      <a class="logo" href="/">
+        <img class="logo-mark" src="/assets/logo/logo_transparent.webp" alt="Lucas Laszacs logo" width="32" height="32">
+        <span class="logo-label">Lucas Laszacs</span>
+      </a>
       <div class="nav-links">
         <a class="active" href="/">Home</a>
         <a href="/projects/">Projects</a>
+        <a href="/tools/">Tools</a>
         <a href="/lab/">Lab</a>
         <a href="/about/">About</a>
         <a href="/resume/">Resume</a>
@@ -177,9 +187,9 @@
   <section class="section reveal delay-3">
     <div class="section-heading">
       <h2>Live GitHub Signal</h2>
-      <p>Most recently active non-fork repositories.</p>
+      <p>Most recently active non-fork project repositories.</p>
     </div>
-    <div id="github-feed" class="card">Loading GitHub repositories...</div>
+    <div id="github-feed" class="card github-feed" data-github-stream="projects" data-stream-limit="6">Loading GitHub repositories...</div>
   </section>
 
   <section class="section reveal delay-4">

@@ -1,0 +1,24 @@
+{
+  "name": "Lucas Laszacs",
+  "short_name": "Lucas",
+  "description": "Systems-focused technical builder across software, data, automation, and biotech research.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070709",
+  "theme_color": "#070709",
+  "icons": [
+    {
+      "src": "/assets/logo/logo_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo/maskable_icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
